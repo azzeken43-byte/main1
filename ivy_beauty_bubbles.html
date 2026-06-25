@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ivy Beauty & Bubbles - Best Balayage in Doha & Luxury Hair Salon. Experience premium haircare, bespoke styling, and restorative treatments at our Doha locations.">
+    <meta name="keywords" content="Luxury Hair Salon Doha, Best Balayage in Doha, Hair Extensions Qatar, Ivy Beauty & Bubbles, Premium Haircare Doha">
+    <title>Ivy Beauty & Bubbles | Luxury Hair Salon Doha</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        onyx: '#111111',
+                        charcoal: '#222222',
+                        gold: '#C5A059',
+                        goldlight: '#DBC186',
+                        champagne: '#FDFBF7',
+                        sand: '#F4F0E6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards'
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles & Overrides */
+        body { background-color: #FDFBF7; color: #111111; overflow-x: hidden; }
+        
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #FDFBF7; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 10px; }
+        
+        /* Flip Card CSS */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        
+        /* Before/After Slider specific styles */
+        .slider-container { touch-action: none; user-select: none; }
+        
+        /* Accordion transition */
+        .accordion-content { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        .accordion-content.open { max-height: 500px; opacity: 1; }
+        
+        /* Video Bubble Pulse */
+        .video-bubble-ring {
+            position: absolute; inset: -4px; border-radius: 50%; border: 2px solid #C5A059;
+            animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; z-index: -1;
+        }
+
+        /* Ambient background glow for sections */
+        .ambient-glow { position: absolute; filter: blur(80px); opacity: 0.4; z-index: 0; border-radius: 50%; pointer-events: none; }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-gold selection:text-white">
+
+    <!-- Sticky Contact Bar -->
+    <div class="bg-onyx text-champagne text-xs md:text-sm py-2 px-4 flex justify-between items-center z-50 relative">
+        <div class="flex items-center space-x-4 hidden md:flex">
+            <span class="flex items-center"><i class="fa-solid fa-location-dot text-gold mr-2"></i> Marriott Marquis & Hilton Al Sadd, Doha</span>
+            <span class="flex items-center"><i class="fa-regular fa-clock text-gold mr-2"></i> Open 9AM - 10PM Daily</span>
+        </div>
+        <div class="md:hidden flex items-center">
+            <span class="flex items-center"><i class="fa-solid fa-location-dot text-gold mr-2"></i> Doha Locations</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="https://wa.me/97450108280" target="_blank" class="hover:text-gold transition-colors flex items-center">
+                <i class="fa-brands fa-whatsapp text-lg text-green-400 mr-1"></i> Quick Chat
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 bg-transparent py-4 px-6 md:px-12 flex justify-between items-center" style="top: 36px;">
+        <!-- Logo -->
+        <a href="#" class="text-2xl md:text-3xl font-serif font-bold text-white tracking-widest uppercase z-50" id="nav-logo">
+            IVY <span class="block text-[0.4em] tracking-[0.3em] font-sans font-light text-gold text-center -mt-1">Beauty & Bubbles</span>
+        </a>
+        
+        <!-- Desktop Links -->
+        <div class="hidden lg:flex space-x-8 items-center font-medium text-sm tracking-wider uppercase text-white" id="nav-links">
+            <a href="#services" class="hover:text-gold transition-colors">Services</a>
+            <a href="#artists" class="hover:text-gold transition-colors">The Artists</a>
+            <a href="#ugx-wall" class="hover:text-gold transition-colors">Ivy Muses</a>
+            <a href="#reviews" class="hover:text-gold transition-colors">Community</a>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+            <button onclick="openBookingModal()" class="bg-gold hover:bg-goldlight text-onyx font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(197,160,89,0.3)] text-sm tracking-wide uppercase">
+                Book Appointment
+            </button>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl z-50">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-onyx z-40 flex flex-col items-center justify-center space-y-8 text-champagne opacity-0 pointer-events-none transition-opacity duration-300">
+        <a href="#services" class="text-2xl font-serif hover:text-gold" onclick="closeMobileMenu()">Services</a>
+        <a href="#artists" class="text-2xl font-serif hover:text-gold" onclick="closeMobileMenu()">The Artists</a>
+        <a href="#ugx-wall" class="text-2xl font-serif hover:text-gold" onclick="closeMobileMenu()">Ivy Muses</a>
+        <a href="#reviews" class="text-2xl font-serif hover:text-gold" onclick="closeMobileMenu()">Community</a>
+        <button onclick="openBookingModal(); closeMobileMenu();" class="mt-8 border border-gold text-gold py-3 px-10 rounded-full text-lg uppercase tracking-widest hover:bg-gold hover:text-onyx transition-colors">
+            Book Now
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Background Video / Image Fallback -->
+        <div class="absolute inset-0 w-full h-full bg-onyx z-0">
+            <!-- Using a high-quality relevant stock video from a reliable source. If it fails, fallback to dark bg -->
+            <video autoplay loop muted playsinline class="object-cover w-full h-full opacity-60 scale-105 transition-transform duration-[20s] ease-linear">
+                <source src="https://videos.pexels.com/video-files/3998136/3998136-uhd_2560_1440_25fps.mp4" type="video/mp4">
+                <!-- Fallback elegant image if video fails to load or for browsers that block auto-play -->
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" class="object-cover w-full h-full opacity-60" alt="Salon Washing Hair">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-onyx/70 via-transparent to-onyx/90"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+            <p class="text-gold uppercase tracking-[0.3em] text-sm md:text-base font-semibold mb-4 animate-fade-in-up" style="animation-delay: 0.2s;">Doha's Premier Luxury Salon</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.4s;">
+                Awaken Your <br><span class="italic font-light">Confidence.</span>
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.6s;">
+                Experience bespoke balayage, restorative treatments, and glamorous styling in an atmosphere of pure exclusivity.
+            </p>
+            <div class="animate-fade-in-up" style="animation-delay: 0.8s;">
+                <button onclick="openBookingModal()" class="bg-champagne hover:bg-white text-onyx font-medium py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-2xl text-sm md:text-base tracking-widest uppercase">
+                    Reserve Your Chair
+                </button>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce flex flex-col items-center">
+            <span class="text-white/50 text-xs tracking-widest uppercase mb-2">Discover</span>
+            <i class="fa-solid fa-chevron-down text-white/50"></i>
+        </div>
+    </header>
+
+    <!-- Floating Sticky "Book Now" for Mobile -->
+    <button onclick="openBookingModal()" class="md:hidden fixed bottom-6 right-6 z-40 bg-gold text-onyx font-bold p-4 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.3)] border-2 border-champagne flex items-center justify-center w-16 h-16 transition-transform active:scale-95">
+        <i class="fa-regular fa-calendar-check text-2xl"></i>
+    </button>
+
+    <!-- Loved by Doha Marquee Section -->
+    <section id="reviews" class="bg-onyx text-champagne py-6 overflow-hidden border-y border-gray-800">
+        <div class="flex items-center relative w-full max-w-screen-2xl mx-auto">
+            <!-- Left Gradient to hide scroll pop-in -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-onyx to-transparent z-10"></div>
+            
+            <div class="flex items-center space-x-12 whitespace-nowrap animate-marquee px-4">
+                <!-- Group 1 -->
+                <div class="flex items-center space-x-2">
+                    <div class="flex text-gold text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <span class="font-bold">4.9 Google Rating</span>
+                </div>
+                <span class="text-gray-500">|</span>
+                <p class="font-serif italic text-lg">"The absolute best balayage in Doha!" - Fatima A.</p>
+                <span class="text-gray-500">|</span>
+                <p class="font-serif italic text-lg">"A true 5-star VIP experience." - Sarah K.</p>
+                <span class="text-gray-500">|</span>
+                <p class="font-serif italic text-lg">"Majd transformed my hair completely." - Noor H.</p>
+                <span class="text-gray-500">|</span>
+                
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="flex items-center space-x-2">
+                    <div class="flex text-gold text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <span class="font-bold">4.9 Google Rating</span>
+                </div>
+                <span class="text-gray-500">|</span>
+                <p class="font-serif italic text-lg">"The absolute best balayage in Doha!" - Fatima A.</p>
+                <span class="text-gray-500">|</span>
+                <p class="font-serif italic text-lg">"A true 5-star VIP experience." - Sarah K.</p>
+                <span class="text-gray-500">|</span>
+                <p class="font-serif italic text-lg">"Majd transformed my hair completely." - Noor H.</p>
+            </div>
+            
+            <!-- Right Gradient -->
+            <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-onyx to-transparent z-10"></div>
+        </div>
+    </section>
+
+    <!-- The Transformation Section (Before/After Slider) -->
+    <section class="py-24 px-6 md:px-12 bg-champagne relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-gold uppercase mb-3">The Ivy Effect</h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-onyx mb-4">Dramatic Transformations</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto font-light">Drag the slider to witness the artistry of our master colorists. Real clients, real magic.</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl slider-container h-[50vh] md:h-[70vh] bg-gray-200" id="ba-slider">
+                <!-- Before Image (Base) - Woman from back with messy dark hair -->
+                <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Before Hair" class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none">
+                <div class="absolute top-4 left-4 bg-onyx/80 text-white text-xs uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm select-none">Before</div>
+                
+                <!-- After Image (Overlay, Clipped) -->
+                <div id="slider-overlay" class="absolute inset-0 w-full h-full overflow-hidden select-none" style="width: 50%;">
+                    <!-- High contrast after image representing a vibrant balayage -->
+                    <img src="unnamed (1).webp" alt="After Hair" class="absolute inset-0 w-full h-full object-cover max-w-none select-none pointer-events-none" style="width: 100vw; max-width: 896px; /* max-w-4xl width */">
+                </div>
+                <div class="absolute top-4 right-4 bg-gold/90 text-onyx text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm select-none z-10">After</div>
+                
+                <!-- Slider Handle -->
+                <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize flex items-center justify-center select-none" style="left: 50%;">
+                    <div class="w-10 h-10 bg-white rounded-full shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center border-2 border-gold absolute -left-[18px]">
+                        <i class="fa-solid fa-arrows-left-right text-onyx text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Services Menu Section -->
+    <section id="services" class="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
+        <!-- Ambient background blob -->
+        <div class="ambient-glow bg-gold/10 w-96 h-96 -top-20 -left-20 animate-blob"></div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-gold uppercase mb-3">Our Menu</h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-onyx mb-4">Bespoke Services</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto font-light">Tailored treatments crafted for the modern, sophisticated woman. Explore our exclusive offerings.</p>
+            </div>
+
+            <!-- Accordion Container -->
+            <div class="space-y-4">
+                <!-- Category 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-champagne hover:border-gold/50 transition-colors">
+                    <button class="accordion-btn w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-serif text-2xl text-onyx">Coloring & Balayage</span>
+                        <i class="fa-solid fa-plus text-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-white px-8">
+                        <div class="py-6 border-t border-gray-100 space-y-6">
+                            <div class="flex justify-between items-end border-b border-gray-50 pb-4">
+                                <div>
+                                    <h4 class="font-bold text-lg text-onyx">Signature Balayage</h4>
+                                    <p class="text-sm text-gray-500 font-light mt-1 max-w-md">Seamless, sun-kissed blending tailored to your natural root color for a low-maintenance, high-impact look.</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-gray-400 block uppercase tracking-widest">From</span>
+                                    <span class="font-serif text-xl text-gold font-semibold">QAR 770</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-gray-50 pb-4">
+                                <div>
+                                    <h4 class="font-bold text-lg text-onyx">Full Color Transformation</h4>
+                                    <p class="text-sm text-gray-500 font-light mt-1 max-w-md">Root-to-tip flawless color application using premium Italian vegan dyes (Jean Paul Myne).</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-gray-400 block uppercase tracking-widest">From</span>
+                                    <span class="font-serif text-xl text-gold font-semibold">QAR 550</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-champagne hover:border-gold/50 transition-colors">
+                    <button class="accordion-btn w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-serif text-2xl text-onyx">Styling & Cut</span>
+                        <i class="fa-solid fa-plus text-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-white px-8">
+                        <div class="py-6 border-t border-gray-100 space-y-6">
+                            <div class="flex justify-between items-end border-b border-gray-50 pb-4">
+                                <div>
+                                    <h4 class="font-bold text-lg text-onyx">Hollywood Blowout</h4>
+                                    <p class="text-sm text-gray-500 font-light mt-1 max-w-md">Voluminous, bouncy, long-lasting styling perfect for events.</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-gray-400 block uppercase tracking-widest">From</span>
+                                    <span class="font-serif text-xl text-gold font-semibold">QAR 250</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-end border-b border-gray-50 pb-4">
+                                <div>
+                                    <h4 class="font-bold text-lg text-onyx">Restyle Haircut</h4>
+                                    <p class="text-sm text-gray-500 font-light mt-1 max-w-md">A professional cut tailored to your face shape by our master stylists.</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-gray-400 block uppercase tracking-widest">From</span>
+                                    <span class="font-serif text-xl text-gold font-semibold">QAR 300</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-champagne hover:border-gold/50 transition-colors">
+                    <button class="accordion-btn w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <span class="font-serif text-2xl text-onyx">Restorative Treatments</span>
+                        <i class="fa-solid fa-plus text-gold text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content bg-white px-8">
+                        <div class="py-6 border-t border-gray-100 space-y-6">
+                            <div class="flex justify-between items-end border-b border-gray-50 pb-4">
+                                <div>
+                                    <h4 class="font-bold text-lg text-onyx">Thermo Repair / Oxilock</h4>
+                                    <p class="text-sm text-gray-500 font-light mt-1 max-w-md">Deeply nourishes and strengthens hair from within, adding incredible shine without changing natural texture.</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-gray-400 block uppercase tracking-widest">From</span>
+                                    <span class="font-serif text-xl text-gold font-semibold">QAR 400</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/ivybeautyandbubbles_doha/?hl=en" target="_blank" class="inline-flex items-center space-x-2 bg-transparent border border-onyx text-onyx py-3 px-8 rounded-full hover:bg-onyx hover:text-white transition-all duration-300 uppercase tracking-widest text-sm font-semibold">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>Join our 12k+ Instagram Followers</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Video Bubble (Bottom Left) -->
+    <div class="fixed bottom-6 left-6 z-40 hidden md:flex flex-col gap-4">
+        <div class="relative cursor-pointer group" onclick="openVideoModal()">
+            <div class="video-bubble-ring"></div>
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-lg relative">
+                <!-- Fallback GIF or Image simulating a playing video -->
+                <img src="https://images.unsplash.com/photo-1542596594-649edbc13630?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Client Review" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform">
+                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                    <i class="fa-solid fa-play text-white text-xl drop-shadow-md group-hover:text-gold transition-colors"></i>
+                </div>
+            </div>
+            <!-- Tooltip -->
+            <div class="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-white text-onyx text-xs px-3 py-2 rounded shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <p class="font-bold">Hear from our clients <i class="fa-solid fa-sparkles text-gold ml-1"></i></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-md">
+        <button onclick="closeVideoModal()" class="absolute top-6 right-6 text-white hover:text-gold text-3xl z-10 transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="relative w-full max-w-sm mx-auto aspect-[9/16] bg-onyx rounded-2xl overflow-hidden shadow-2xl scale-95 transition-transform duration-300" id="video-modal-content">
+            <!-- Simulated Video Content -->
+            <img src="https://images.unsplash.com/photo-1542596594-649edbc13630?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover opacity-80" alt="Video">
+            <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                <div class="flex items-center space-x-2 mb-2">
+                    <div class="flex text-gold text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <p class="font-serif text-lg italic mb-2">"I've never felt more glamorous. Majd completely understood my vision and the result is stunning!"</p>
+                <p class="text-xs uppercase tracking-widest text-gray-400">- Reem Al-Thani</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Frictionless Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-400">
+        <div class="bg-champagne w-full max-w-4xl mx-4 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden relative scale-95 transition-transform duration-400" id="booking-modal-content">
+            
+            <!-- Close btn -->
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-onyx hover:text-gold text-2xl z-20 transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Image side -->
+            <div class="hidden md:block w-2/5 relative">
+                <img src="https://images.unsplash.com/photo-1521590832167-7bfcbaa6362d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Salon Aesthetic">
+                <div class="absolute inset-0 bg-onyx/30"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <h3 class="font-serif text-3xl mb-2">Your VIP<br>Experience</h3>
+                    <p class="font-light text-sm opacity-90">Secure your appointment in seconds.</p>
+                </div>
+            </div>
+
+            <!-- Form side -->
+            <div class="w-full md:w-3/5 p-8 md:p-12 overflow-y-auto max-h-[90vh]">
+                <h2 class="text-2xl font-serif text-onyx mb-6 border-b border-gray-200 pb-4">Request an Appointment</h2>
+                
+                <form id="booking-form" class="space-y-6" onsubmit="submitBooking(event)">
+                    <!-- Location Selection -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Select Location</label>
+                        <select class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-onyx focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold appearance-none">
+                            <option>Marriott Marquis City Center</option>
+                            <option>Hilton Al Sadd</option>
+                            <option>Le Méridien City Center (Ladies Only)</option>
+                        </select>
+                    </div>
+
+                    <!-- Service & Artist -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Service</label>
+                            <select class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-onyx focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold appearance-none">
+                                <option>Signature Balayage Package</option>
+                                <option>Full Color Transformation</option>
+                                <option>Hollywood Blowout</option>
+                                <option>Hair Extensions</option>
+                                <option>Restorative Treatment</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Preferred Artist</label>
+                            <select id="artist-select" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-onyx focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold appearance-none">
+                                <option value="Any">Anyone Available</option>
+                                <option value="Majd">Majd</option>
+                                <option value="Abbas">Abbas</option>
+                                <option value="Elena">Elena</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Date & Time -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Date</label>
+                            <input type="date" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-onyx focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Time</label>
+                            <input type="time" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-onyx focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" required>
+                        </div>
+                    </div>
+
+                    <!-- Personal Details -->
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Your Details</label>
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Full Name" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-onyx focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" required>
+                            <input type="tel" placeholder="Phone Number (WhatsApp)" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-onyx focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-onyx text-champagne font-bold py-4 rounded-lg mt-6 hover:bg-gold transition-colors uppercase tracking-widest">
+                        Confirm Request
+                    </button>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="booking-success" class="hidden flex-col items-center justify-center py-12 text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-check text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="font-serif text-3xl text-onyx mb-2">Request Received!</h3>
+                    <p class="text-gray-600 font-light">Our concierge will contact you via WhatsApp shortly to confirm your booking.</p>
+                    <button onclick="closeBookingModal()" class="mt-8 border border-onyx text-onyx py-2 px-6 rounded-full hover:bg-onyx hover:text-white transition-colors">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-onyx pt-20 pb-10 px-6 md:px-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-champagne mb-16">
+            
+            <!-- Brand -->
+            <div class="md:col-span-1">
+                <a href="#" class="text-2xl font-serif font-bold text-white tracking-widest uppercase mb-4 inline-block">
+                    IVY <span class="block text-[0.4em] tracking-[0.3em] font-sans font-light text-gold mt-1">Beauty & Bubbles</span>
+                </a>
+                <p class="text-sm text-gray-400 font-light mt-4 leading-relaxed">
+                    Doha's premier destination for bespoke balayage, luxury styling, and restorative hair wellness.
+                </p>
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://www.instagram.com/ivybeautyandbubbles_doha/?hl=en" target="_blank" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gold hover:border-gold transition-colors text-white">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gold hover:border-gold transition-colors text-white">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gold hover:border-gold transition-colors text-white">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Locations -->
+            <div class="md:col-span-1">
+                <h4 class="font-bold text-white uppercase tracking-widest text-sm mb-6">Our Locations</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-400">
+                    <li>
+                        <strong class="text-gold block mb-1">Marriott Marquis City Center</strong>
+                        Omar Al Mukhtar St, Doha, Qatar
+                    </li>
+                    <li>
+                        <strong class="text-gold block mb-1">Hilton Al Sadd</strong>
+                        Mohamed Bin Al Qassim St, Doha
+                    </li>
+                    <li>
+                        <strong class="text-gold block mb-1">Le Méridien City Center</strong>
+                        Ladies Only Section
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Links -->
+            <div class="md:col-span-1">
+                <h4 class="font-bold text-white uppercase tracking-widest text-sm mb-6">Explore</h4>
+                <ul class="space-y-3 text-sm font-light text-gray-400">
+                    <li><a href="#services" class="hover:text-gold transition-colors">Services Menu</a></li>
+                    <li><a href="#artists" class="hover:text-gold transition-colors">Meet the Team</a></li>
+                    <li><a href="#ugx-wall" class="hover:text-gold transition-colors">Ivy Muses (Gallery)</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">FAQ</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="md:col-span-1">
+                <h4 class="font-bold text-white uppercase tracking-widest text-sm mb-6">Contact</h4>
+                <ul class="space-y-4 text-sm font-light text-gray-400">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-phone text-gold mt-1 mr-3"></i>
+                        <span>+974 5010 8280<br><span class="text-xs text-gray-500">(Calls & WhatsApp)</span></span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-envelope text-gold mt-1 mr-3"></i>
+                        <span>info@ivybeautyandbubbles.com</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-regular fa-clock text-gold mt-1 mr-3"></i>
+                        <span>Mon - Sun: 9:00 AM - 10:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-light">
+            <p>&copy; 2026 IVY Beauty & Bubbles. All rights reserved.</p>
+            <div class="space-x-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-onyx/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+                navbar.style.top = '0';
+            } else {
+                navbar.classList.add('bg-transparent');
+                navbar.classList.remove('bg-onyx/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.style.top = '36px'; // Below sticky contact bar
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+
+        mobileBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                mobileBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                document.body.style.overflow = 'hidden';
+            } else {
+                closeMobileMenu();
+            }
+        });
+
+        function closeMobileMenu() {
+            menuOpen = false;
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Accordion Logic
+        function toggleAccordion(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.classList.remove('rotate-45');
+            } else {
+                // Close others
+                document.querySelectorAll('.accordion-content').forEach(el => {
+                    el.classList.remove('open');
+                });
+                document.querySelectorAll('.accordion-btn i').forEach(el => {
+                    el.classList.remove('rotate-45');
+                });
+                
+                content.classList.add('open');
+                icon.classList.add('rotate-45');
+            }
+        }
+
+        // Before/After Slider Logic
+        const sliderContainer = document.getElementById('ba-slider');
+        const sliderHandle = document.getElementById('slider-handle');
+        const sliderOverlay = document.getElementById('slider-overlay');
+        let isDragging = false;
+
+        function slide(event) {
+            if (!isDragging) return;
+            
+            let clientX;
+            if (event.type.includes('touch')) {
+                clientX = event.touches[0].clientX;
+            } else {
+                clientX = event.clientX;
+            }
+
+            const rect = sliderContainer.getBoundingClientRect();
+            let x = clientX - rect.left;
+            
+            // Constrain
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+
+            const percentage = (x / rect.width) * 100;
+            
+            sliderHandle.style.left = `${percentage}%`;
+            sliderOverlay.style.width = `${percentage}%`;
+        }
+
+        sliderContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            slide(e);
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+        window.addEventListener('mousemove', slide);
+
+        // Touch support
+        sliderContainer.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            slide(e);
+        });
+        window.addEventListener('touchend', () => { isDragging = false; });
+        window.addEventListener('touchmove', slide);
+
+        // Booking Modal Logic
+        const bookingModal = document.getElementById('booking-modal');
+        const bookingModalContent = document.getElementById('booking-modal-content');
+        const artistSelect = document.getElementById('artist-select');
+
+        function openBookingModal(preselectedArtist = null) {
+            bookingModal.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                bookingModalContent.classList.remove('scale-95');
+                bookingModalContent.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+
+            if (preselectedArtist) {
+                artistSelect.value = preselectedArtist;
+            } else {
+                artistSelect.value = "Any";
+            }
+            
+            // Reset form UI if opened again
+            document.getElementById('booking-form').classList.remove('hidden');
+            document.getElementById('booking-success').classList.add('hidden');
+            document.getElementById('booking-form').reset();
+        }
+
+        function closeBookingModal() {
+            bookingModalContent.classList.remove('scale-100');
+            bookingModalContent.classList.add('scale-95');
+            bookingModal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        }
+
+        function submitBooking(e) {
+            e.preventDefault();
+            // Simulate API call / processing
+            document.getElementById('booking-form').classList.add('hidden');
+            document.getElementById('booking-success').classList.remove('hidden');
+            document.getElementById('booking-success').classList.add('flex');
+        }
+
+        // Video Modal Logic
+        const videoModal = document.getElementById('video-modal');
+        const videoModalContent = document.getElementById('video-modal-content');
+
+        function openVideoModal() {
+            videoModal.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                videoModalContent.classList.remove('scale-95');
+                videoModalContent.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            videoModalContent.classList.remove('scale-100');
+            videoModalContent.classList.add('scale-95');
+            videoModal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        }
+
+    </script>
+</body>
+</html>
